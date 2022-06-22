@@ -23,16 +23,6 @@ cc_prebuilt_library_shared {
 }
 
 android_app_import {
-	name: "SoterService",
-	owner: "xiaomi",
-	apk: "proprietary/system/app/SoterService/SoterService.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-}
-
-android_app_import {
 	name: "CACertService",
 	owner: "xiaomi",
 	apk: "proprietary/vendor/app/CACertService/CACertService.apk",
@@ -66,9 +56,9 @@ android_app_import {
 }
 
 android_app_import {
-	name: "TimeService",
+	name: "SoterService",
 	owner: "xiaomi",
-	apk: "proprietary/vendor/app/TimeService/TimeService.apk",
+	apk: "proprietary/vendor/app/SoterService/SoterService.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -77,10 +67,10 @@ android_app_import {
 }
 
 android_app_import {
-	name: "com.qualcomm.qti.gpudrivers.lahaina.api30",
+	name: "TimeService",
 	owner: "xiaomi",
-	apk: "proprietary/vendor/app/com.qualcomm.qti.gpudrivers.lahaina.api30/com.qualcomm.qti.gpudrivers.lahaina.api30.apk",
-	presigned: true,
+	apk: "proprietary/vendor/app/TimeService/TimeService.apk",
+	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
@@ -210,6 +200,15 @@ prebuilt_etc_xml {
 	name: "manifest_vendor.xiaomi.hardware.mlipay",
 	owner: "xiaomi",
 	src: "proprietary/vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "vendor.qti.diag.hal.service",
+	owner: "xiaomi",
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
